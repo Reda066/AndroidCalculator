@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.mbds.newsletter.R
 import com.mbds.newsletter.adapters.ArticleAdapter
@@ -18,7 +19,7 @@ import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
 
-class ArticlesFragement() : Fragment() {
+class ArticlesFragment() : Fragment() {
 
     private lateinit var binding: FragmentArticlesBinding
     private val articleAdapter = ArticleAdapter(mutableListOf())
@@ -41,7 +42,7 @@ class ArticlesFragement() : Fragment() {
 
         val recyclerView: RecyclerView = view.findViewById(R.id.article_recycler_view)
         val adapterRecycler = articleAdapter
-        recyclerView.layoutManager = GridLayoutManager(view.context, 2)
+        recyclerView.layoutManager = LinearLayoutManager(view?.context)
         recyclerView.adapter = adapterRecycler
 
     }

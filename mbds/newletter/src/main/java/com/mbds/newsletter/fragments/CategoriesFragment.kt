@@ -13,10 +13,10 @@ import com.mbds.newsletter.model.Category
 
 /**
  * A simple [Fragment] subclass.
- * Use the [CategoriesFragement.newInstance] factory method to
+ * Use the [CategoriesFragment.newInstance] factory method to
  * create an instance of this fragment.
  */
-class CategoriesFragement : Fragment() {
+class CategoriesFragment : Fragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
