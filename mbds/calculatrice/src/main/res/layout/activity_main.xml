@@ -13,6 +13,8 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:text="1"
+        style="@style/black"
+        android:onClick="numberEvent"
         app:layout_constraintHeight_percent="0.2"
         app:layout_constraintBottom_toTopOf="@+id/button4"
         app:layout_constraintStart_toStartOf="parent"
@@ -25,6 +27,8 @@
         app:layout_constraintHeight_percent="0.2"
         android:layout_height="0dp"
         android:text="2"
+        style="@style/black"
+        android:onClick="numberEvent"
         app:layout_constraintWidth_percent="0.25"
         app:layout_constraintStart_toEndOf="@+id/button1"
         app:layout_constraintTop_toTopOf="@+id/button1" />
@@ -36,6 +40,8 @@
         app:layout_constraintHeight_percent="0.2"
         android:layout_height="0dp"
         android:text="3"
+        style="@style/black"
+        android:onClick="numberEvent"
         app:layout_constraintWidth_percent="0.25"
         app:layout_constraintStart_toEndOf="@+id/button2"
         app:layout_constraintTop_toTopOf="@+id/button2"
@@ -48,6 +54,7 @@
         app:layout_constraintHeight_percent="0.2"
         android:layout_height="0dp"
         android:text="+"
+        style="@style/azure"
         app:layout_constraintWidth_percent="0.25"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -61,6 +68,8 @@
         app:layout_constraintHeight_percent="0.2"
         android:layout_height="0dp"
         android:text="4"
+        style="@style/black"
+        android:onClick="numberEvent"
         app:layout_constraintWidth_percent="0.25"
         app:layout_constraintBottom_toTopOf="@+id/button7"
         app:layout_constraintStart_toStartOf="@+id/button1" />
@@ -72,6 +81,8 @@
         app:layout_constraintHeight_percent="0.2"
         android:layout_height="0dp"
         android:text="5"
+        android:onClick="numberEvent"
+        style="@style/black"
         app:layout_constraintWidth_percent="0.25"
         app:layout_constraintStart_toEndOf="@+id/button4"
         app:layout_constraintTop_toTopOf="@+id/button4" />
@@ -83,6 +94,8 @@
         app:layout_constraintHeight_percent="0.2"
         android:layout_height="0dp"
         android:text="6"
+        style="@style/black"
+        android:onClick="numberEvent"
         app:layout_constraintWidth_percent="0.25"
         app:layout_constraintStart_toEndOf="@+id/button5"
         app:layout_constraintTop_toTopOf="@+id/button5" />
@@ -95,6 +108,7 @@
         app:layout_constraintHeight_percent="0.2"
         android:layout_height="0dp"
         android:text="-"
+        style="@style/azure"
         app:layout_constraintWidth_percent="0.25"
         app:layout_constraintStart_toEndOf="@+id/button6"
         app:layout_constraintTop_toTopOf="@+id/button6" />
@@ -106,6 +120,8 @@
         app:layout_constraintHeight_percent="0.2"
         android:layout_height="0dp"
         android:text="7"
+        style="@style/black"
+        android:onClick="numberEvent"
         app:layout_constraintWidth_percent="0.25"
         app:layout_constraintBottom_toTopOf="@+id/buttonEgal"
         app:layout_constraintStart_toStartOf="@+id/button4"/>
@@ -116,6 +132,8 @@
         app:layout_constraintHeight_percent="0.2"
         android:layout_height="0dp"
         android:text="8"
+        style="@style/black"
+        android:onClick="numberEvent"
         app:layout_constraintWidth_percent="0.25"
         app:layout_constraintStart_toEndOf="@+id/button7"
         app:layout_constraintTop_toTopOf="@+id/button7" />
@@ -127,6 +145,8 @@
         app:layout_constraintHeight_percent="0.2"
         android:layout_height="0dp"
         android:text="9"
+        style="@style/black"
+        android:onClick="numberEvent"
         app:layout_constraintWidth_percent="0.25"
         app:layout_constraintStart_toEndOf="@+id/button8"
         app:layout_constraintTop_toTopOf="@+id/button8" />
@@ -138,6 +158,7 @@
         app:layout_constraintHeight_percent="0.2"
         android:layout_height="0dp"
         android:text="x"
+        style="@style/azure"
         app:layout_constraintWidth_percent="0.25"
         app:layout_constraintStart_toEndOf="@+id/button9"
         app:layout_constraintTop_toTopOf="@+id/button9" />
@@ -151,6 +172,7 @@
         app:layout_constraintHeight_percent="0.2"
         android:layout_height="0dp"
         android:text="="
+        style="@style/red"
         app:layout_constraintWidth_percent="0.5"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="@+id/button7" />
@@ -160,6 +182,7 @@
         app:layout_constraintHeight_percent="0.2"
         android:layout_height="0dp"
         android:text="0"
+        style="@style/black"
         app:layout_constraintWidth_percent="0.25"
         app:layout_constraintStart_toEndOf="@+id/buttonEgal"
         app:layout_constraintTop_toTopOf="@+id/buttonEgal" />
@@ -170,16 +193,19 @@
         android:layout_height="0dp"
         app:layout_constraintHeight_percent="0.2"
         android:text="%"
+        style="@style/azure"
         app:layout_constraintWidth_percent="0.25"
         app:layout_constraintStart_toEndOf="@+id/button0"
         app:layout_constraintTop_toTopOf="@+id/button0" />
-
 
     <TextView
         android:id="@+id/Expression"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:text="Expression"
+        android:gravity="left"
+        android:textColor="@color/white"
+        android:textSize="35dp"
         app:layout_constraintHeight_percent="0.1"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -191,10 +217,15 @@
         android:layout_height="0dp"
         android:ems="10"
         android:inputType="number"
+        android:text="0"
+        android:textColor="@color/white"
+        android:textSize="35dp"
+        android:gravity="right"
+        android:layout_marginBottom="1pt"
         app:layout_constraintHeight_percent="0.1"
         app:layout_constraintStart_toStartOf="@+id/Expression"
         app:layout_constraintEnd_toEndOf="@id/Expression"
-        app:layout_constraintTop_toBottomOf="@+id/Expression" />
-
+        app:layout_constraintTop_toBottomOf="@+id/Expression"
+        />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
