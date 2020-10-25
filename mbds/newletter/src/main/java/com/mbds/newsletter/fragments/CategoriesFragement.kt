@@ -8,15 +8,15 @@ import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.mbds.newsletter.R
-import com.mbds.newsletter.adapters.CategoriAdapter
+import com.mbds.newsletter.adapters.CategoryAdapter
 import com.mbds.newsletter.model.Category
 
 /**
  * A simple [Fragment] subclass.
- * Use the [CategoriesFragment.newInstance] factory method to
+ * Use the [CategoriesFragement.newInstance] factory method to
  * create an instance of this fragment.
  */
-class CategoriesFragment : Fragment() {
+class CategoriesFragement : Fragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -29,19 +29,12 @@ class CategoriesFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         val recyclerView: RecyclerView = view.findViewById(R.id.recycler_view)
-        val articles = listOf(
+        val categories = listOf(
             Category(name = "Politique", image = "https://picsum.photos/500/300"),
             Category(name = "Economie", image = "https://picsum.photos/500/300"),
             Category(name = "Pandémie", image = "https://picsum.photos/500/300"),
-            Category(name = "Santé", image = "https://picsum.photos/500/300"),
-            Category(name = "Santé", image = "https://picsum.photos/500/300"),
-            Category(name = "Santé", image = "https://picsum.photos/500/300"),
-            Category(name = "Santé", image = "https://picsum.photos/500/300"),
-            Category(name = "Santé", image = "https://picsum.photos/500/300"),
-            Category(name = "Santé", image = "https://picsum.photos/500/300"),
-            Category(name = "Santé", image = "https://picsum.photos/500/300")
         )
-        val adapterRecycler = CategoriAdapter(articles)
+        val adapterRecycler = CategoryAdapter(categories)
         recyclerView.layoutManager = GridLayoutManager(view.context, 2)
         recyclerView.adapter = adapterRecycler
     }
