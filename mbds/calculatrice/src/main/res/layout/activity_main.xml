@@ -200,8 +200,6 @@
         app:layout_constraintTop_toTopOf="@+id/button9" />
 
 
-
-
     <Button
         android:id="@+id/buttonEgal"
         android:layout_width="0dp"

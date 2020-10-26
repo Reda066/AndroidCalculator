@@ -4,7 +4,6 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
-import android.view.View
 import com.mbds.calculatrice.databinding.ActivityMainBinding
 import net.objecthunter.exp4j.ExpressionBuilder
 
