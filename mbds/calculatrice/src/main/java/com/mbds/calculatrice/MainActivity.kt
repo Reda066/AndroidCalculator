@@ -17,9 +17,9 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         //Chiffres
-        binding.button0.setOnClickListener { Expression("1", true) }
-        binding.button1.setOnClickListener { Expression("2", true) }
-        binding.button2.setOnClickListener { Expression("3", true) }
+        binding.button0.setOnClickListener { Expression("0", true) }
+        binding.button1.setOnClickListener { Expression("1", true) }
+        binding.button2.setOnClickListener { Expression("2", true) }
         binding.button3.setOnClickListener { Expression("3", true) }
         binding.button4.setOnClickListener { Expression("4", true) }
         binding.button5.setOnClickListener { Expression("5", true) }
@@ -38,8 +38,13 @@ class MainActivity : AppCompatActivity() {
         binding.buttonParenthGauche.setOnClickListener { Expression("(", false) }
 
         binding.buttonCE.setOnClickListener {
-            binding.Expression.text = ""
-            binding.Resultat.text = ""
+            try {
+                binding.Expression.text = ""
+                binding.Resultat.text = ""
+            }
+            catch (e: Exception) {
+                Log.d("Erreur", " message : " + e.message)
+            }
         }
 
         binding.buttonEgal.setOnClickListener {
@@ -59,9 +64,14 @@ class MainActivity : AppCompatActivity() {
         }
 
         binding.buttonPercent.setOnClickListener {
-            var no: Double = binding.Expression.text.toString().toDouble() / 100
-            binding.Expression.setText(no.toString())
-            binding.Resultat.text = ""
+            try {
+                var no: Double = binding.Expression.text.toString().toDouble() / 100
+                binding.Expression.setText(no.toString())
+                binding.Resultat.text = ""
+            }
+            catch (e: Exception) {
+                Log.d("Erreur", " message : " + e.message)
+            }
 
         }
 
