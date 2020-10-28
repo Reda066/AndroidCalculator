@@ -36,6 +36,7 @@ class ChoiceFragment : Fragment() {
         binding.root.children.filter {
             it is Button
         }.forEach {
+
             it.setOnClickListener { view ->
                 (activity as? MainActivity)?.changeFragment(
                     ComputationFragment.newInstance(

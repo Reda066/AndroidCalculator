@@ -9,18 +9,21 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.mbds.newsletter.R
 import com.mbds.newsletter.model.Article
+import com.mbds.newsletter.databinding.ArticlesListBinding
 
 public class ArticleAdapter(public var dataset: MutableList<Article>) : RecyclerView.Adapter<ArticleAdapter.ViewHolder>() {
 
 
     class ViewHolder(val root: View) : RecyclerView.ViewHolder(root) {
-        fun bind(item: Article) {
-            val articleTitle = root.findViewById<TextView>(R.id.article_title)
-            val imageView = root.findViewById<ImageView>(R.id.article_image)
-            //val articleAuthor = root.findViewById<TextView>(R.id.article_author)
 
-            articleTitle.text = item.title
-            //articleAuthor.text = item.author
+        lateinit var binding : ArticlesListBinding
+
+        fun bind(item: Article) {
+
+            binding.articleTitle.text = item.title
+            binding.articleAuthor.text = "By :" + item.author
+            binding.articleDescription.text = item.description
+
 
 
             Glide
@@ -28,7 +31,9 @@ public class ArticleAdapter(public var dataset: MutableList<Article>) : Recycler
                 .load(item.urlToImage)
                 .fitCenter()
                 .placeholder(R.drawable.placeholder)
-                .into(imageView);
+                .into(binding.articleImage);
+
+
         }
     }
 
@@ -36,7 +41,11 @@ public class ArticleAdapter(public var dataset: MutableList<Article>) : Recycler
         val rootView =
             LayoutInflater.from(parent.context)
                 .inflate(R.layout.articles_list, parent, false)
-        return ArticleAdapter.ViewHolder(rootView)
+
+        val viewHolder = ViewHolder(rootView)
+        viewHolder.binding = ArticlesListBinding.bind(rootView)
+
+        return viewHolder
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {

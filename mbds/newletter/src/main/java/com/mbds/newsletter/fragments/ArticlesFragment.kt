@@ -13,6 +13,7 @@ import com.mbds.newsletter.R
 import com.mbds.newsletter.adapters.ArticleAdapter
 import com.mbds.newsletter.databinding.FragmentArticlesBinding
 import com.mbds.newsletter.model.Article
+import com.mbds.newsletter.model.Category
 import com.mbds.newsletter.repositories.Articlepository
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -24,6 +25,8 @@ class ArticlesFragment() : Fragment() {
     private lateinit var binding: FragmentArticlesBinding
     private val articleAdapter = ArticleAdapter(mutableListOf())
     private val repository = Articlepository()
+    private lateinit var category: Category
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -47,14 +50,15 @@ class ArticlesFragment() : Fragment() {
 
     }
 
-   private suspend fun getData() {
+
+
+    private suspend fun getData() {
         withContext(Dispatchers.IO) {
-            val result = repository.list()
+            val result = repository.list(category.name)
             val articles = result?.articles
             if(articles != null) {
                     setData(articles)
             }
-
         }
     }
 
@@ -67,11 +71,11 @@ class ArticlesFragment() : Fragment() {
     }
 
 
-    /*companion object {
-        fun newInstance(category: Category): ProductsFragement {
-            return ProductsFragement().apply {
+    companion object {
+        fun newInstance(category: Category): ArticlesFragment {
+            return ArticlesFragment().apply {
                 this.category = category
             }
         }
-    }*/
+    }
 }

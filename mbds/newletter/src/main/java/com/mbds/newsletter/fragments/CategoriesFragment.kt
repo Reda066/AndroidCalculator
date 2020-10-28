@@ -30,9 +30,10 @@ class CategoriesFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         val recyclerView: RecyclerView = view.findViewById(R.id.recycler_view)
         val categories = listOf(
-            Category(name = "Politique", image = "https://picsum.photos/500/300"),
-            Category(name = "Economie", image = "https://picsum.photos/500/300"),
-            Category(name = "Pandémie", image = "https://picsum.photos/500/300"),
+            Category(name = "Politique", image = "https://images.pexels.com/photos/4666/berlin-eu-european-union-federal-chancellery.jpg?auto=compress&cs=tinysrgb&dpr=3&h=300&w=500"),
+            Category(name = "Economie", image = "https://images.pexels.com/photos/45708/pexels-photo-45708.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=300&w=500"),
+            Category(name = "Pandémie", image = "https://images.pexels.com/photos/3970330/pexels-photo-3970330.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=300&w=500"),
+            Category(name = "Sport", image = "https://images.pexels.com/photos/863988/pexels-photo-863988.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=300&w=500"),
         )
         val adapterRecycler = CategoryAdapter(categories)
         recyclerView.layoutManager = GridLayoutManager(view.context, 2)

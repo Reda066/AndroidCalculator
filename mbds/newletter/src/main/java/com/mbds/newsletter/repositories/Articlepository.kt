@@ -54,8 +54,8 @@ class AuthenticationInterceptor: Interceptor {
 
 }
 
-    fun list(): ListArticlesResponse? {
-            val response = service.list(q = "bitcoin").execute()
+    fun list(sujet : String): ListArticlesResponse? {
+            val response = service.list(q = sujet).execute()
         return response.body() ?: null
     }
 }
